@@ -5,8 +5,8 @@ This projects requires a configured and running Kubernetes cluster.
 
 # Services
 
-- Ping Service
-- Auth Service
+- [Ping Service](https://github.com/astromo/astromo-ping)
+- [Auth Service](https://github.com/astromo/astromo-auth)
 
 # Setting up the deployments and services
 
