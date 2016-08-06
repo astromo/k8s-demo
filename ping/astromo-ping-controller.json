@@ -1,0 +1,38 @@
+{
+  "kind": "ReplicationController",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "astromo-ping",
+    "labels": {
+      "app": "astromo-ping"
+    }
+  },
+  "spec": {
+    "replicas": 3,
+    "selector": {
+      "app": "astromo-ping"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "astromo-ping"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "astromo-ping",
+            "image": "michieldemey/astromo-ping:latest",
+            "imagePullPolicy": "Always",
+            "ports": [
+              {
+                "name": "http-server",
+                "containerPort": 3000
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

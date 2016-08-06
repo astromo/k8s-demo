@@ -1,0 +1,32 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "astromo-ping"
+  },
+  "spec": {
+    "replicas": 3,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "astromo-ping"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "astromo-ping",
+            "image": "michieldemey/astromo-ping:latest",
+            "imagePullPolicy": "Always",
+            "ports": [
+              {
+                "name": "http-server",
+                "containerPort": 3000
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
