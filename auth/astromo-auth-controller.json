@@ -1,0 +1,45 @@
+{
+  "kind": "ReplicationController",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "astromo-auth",
+    "namespace": "default",
+    "labels": {
+      "app": "astromo-auth"
+    }
+  },
+  "spec": {
+    "replicas": 3,
+    "selector": {
+      "app": "astromo-auth"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "astromo-auth"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "astromo-auth",
+            "image": "michieldemey/astromo-auth:latest",
+            "imagePullPolicy": "Always",
+            "env": [
+              {
+                "name": "KEY_PASSPHRASE",
+                "value": "supersecret"
+              }
+            ],
+            "ports": [
+              {
+                "name": "http-server",
+                "containerPort": 3000
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "astromo-auth",
+    "namespace": "default",
+    "labels": {
+      "app": "astromo-auth"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "port": 3000,
+        "targetPort": 3000,
+        "nodePort": 30001
+      }
+    ],
+    "type": "NodePort",
+    "selector": {
+      "app": "astromo-auth"
+    }
+  }
+}
