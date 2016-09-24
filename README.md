@@ -22,9 +22,9 @@ This projects requires a configured and running Kubernetes cluster.
 `kubectl create -f ./ping/astromo-ping-service.json`
 
 - Setup the Auth deployment:
-`kubectl create -f ./ping/astromo-auth-deployment.json`
+`kubectl create -f ./auth/astromo-auth-deployment.json`
 - Setup the Auth Service:
-`kubectl create -f ./ping/astromo-auth-service.json`
+`kubectl create -f ./auth/astromo-auth-service.json`
 
 # Ping Service
 The ping service is a simple example of a stateless application that simply responds with "pong" if you're authenticated and authorised.
